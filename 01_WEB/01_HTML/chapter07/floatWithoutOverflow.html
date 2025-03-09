@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div.container {
+                /* float 기능을 적용하지 않도록 설정 */
+                overflow: hidden;
+            }
+            div.item {
+                float: left;
+                margin: 0 3px;
+                padding: 10px;
+                border: 1px solid black;
+            }
+
+            .clear {
+                /* float를 더 이상 적용하지 않도록 설정 */
+                /* left, right, both 가 있음. */
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <div class="container">
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴2</div>
+            <div class="item">메뉴3</div>
+            <div class="item">메뉴4</div>
+        </div>
+        <div class="clear"></div>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </body>
+</html>

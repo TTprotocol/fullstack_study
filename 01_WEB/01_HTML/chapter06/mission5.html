@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Chill Guy의 방</title>
+        <style>
+            body {
+                width: 700px;
+                margin: 0 auto;
+                text-align: center;
+                background-color: lightblue;
+            }
+            /* 해당 부분 채우기 */
+            .room {
+                display: flexbox;
+                width: 500px;
+                height: 200px;
+                background-image: url('https://i.pinimg.com/736x/36/45/2f/36452f97ca15a4979d1bc5a03dfc816b.jpg');
+                background-size: contain;
+                margin: 0 auto;
+                margin-bottom: 50px;
+                position: relative;
+                border: 3px solid black;
+                border-radius: 20px;
+            }
+
+            .furniture {
+                display: flex;
+                justify-content: center;
+            }
+
+            .bed {
+                width: 100px;
+                height: 30px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                border: 1px solid white;
+                background: white;
+                border-radius: 10px;
+            }
+
+            .chair {
+                position: relative;
+                width: 100px;
+                height: 30px;
+                margin-top: 20%;
+                margin-left: 40%;
+                border: 1px solid white;
+                background: white;
+                border-radius: 10px;
+            }
+
+            .content {
+                border: 0.5px solid gray;
+                box-shadow: 5px 5px 5px gray;
+                background-color: white;
+            }
+
+            .tv {
+                width: 160px;
+                height: 30px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                border: 1px solid white;
+                background: black;
+                color: white;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Chill Guy의 방 리모델링</h1>
+
+        <!-- 방 영역 (벽지 포함) -->
+        <div class="room">
+            <div class="furniture bed">🛏️ 침대</div>
+            <div class="furniture chair">🪑 의자</div>
+        </div>
+
+        <!-- 내용 영역 -->
+        <div class="content">
+            <p>
+                Chill Guy의 방에는 편안한 가구와 함께, 벽에 Chill한 벽지가 붙어
+                있습니다.
+            </p>
+            <p>
+                스크롤을 내려보세요! TV는 항상 화면 오른쪽 하단에 고정되어
+                있습니다.
+            </p>
+        </div>
+
+        <!-- 화면 고정 TV -->
+        <div class="furniture tv">📺 TV - Chill 뉴스</div>
+    </body>
+</html>

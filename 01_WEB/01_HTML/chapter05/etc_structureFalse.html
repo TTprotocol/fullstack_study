@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS3 Selector Basic</title>
+        <style>
+            /* a의 첫 번째 자식은 텍스트기 때문에 전부 빨간색이 된다. */
+            li > a:first-child {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#">첫 번째</a></li>
+            <li><a href="#">두 번째</a></li>
+            <li><a href="#">세 번째</a></li>
+            <li><a href="#">네 번째</a></li>
+            <li><a href="#">다섯 번째</a></li>
+            <li><a href="#">여섯 번째</a></li>
+            <li><a href="#">일곱 번째</a></li>
+        </ul>
+    </body>
+</html>

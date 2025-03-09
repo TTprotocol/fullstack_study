@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ellipsis</title>
+        <style>
+            h1,
+            p {
+                width: 300px;
+            }
+
+            .ellipsis {
+                /* 줄바꿈 없음 */
+                white-space: nowrap;
+                /* overflow 숨김 */
+                overflow: hidden;
+                /* 잘린 글자 끝에 ... 붙이기 */
+                text-overflow: ellipsis;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="ellipsis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita.
+        </h1>
+        <p class="ellipsis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita.
+        </p>
+    </body>
+</html>

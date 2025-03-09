@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layout</title>
+        <style>
+            body {
+                width: 500px;
+                margin: 10px auto;
+            }
+            #top {
+                background: green;
+            }
+            #middle {
+                /* 수평 정렬. 부모 요소에 넣어야 한다. */
+                display: flex;
+            }
+            #left {
+                width: 150px;
+                background: red;
+            }
+            #right {
+                width: 350px;
+                background: blue;
+            }
+            #bottom {
+                background: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">Lorem ipsum dolor sit amet.</div>
+        <div id="middle">
+            <div id="left">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+            <div id="right">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit. dolor sit amet,
+                consectetur adipisicing elit.
+            </div>
+        </div>
+        <div id="bottom">Lorem ipsum dolor sit amet consectetur.</div>
+    </body>
+</html>

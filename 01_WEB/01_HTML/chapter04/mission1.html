@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>코드마을 입주 신청서</legend>
+        <table>
+          <tr>
+            <th><label for="id">이름</label></th>
+            <td><input type="text" id="id" /></td>
+          </tr>
+          <tr>
+            <th><label for="pw">이메일</label></th>
+            <td><input type="password" id="pw" name="password" /></td>
+          </tr>
+          <tr>
+            <th><label for="pw">비밀번호</label></th>
+            <td><input type="password" id="pw" name="password" /></td>
+          </tr>
+          <tr>
+            <th><label for="pwcheck">비밀번호 확인</label></th>
+            <td><input type="password" id="pwcheck" name="password" /></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <form action="">
+                <fieldset>
+                  <legend>성별</legend>
+                  <table>
+                    <tr>
+                      <td>
+                        <input type="radio" name="gender" id="man" />
+                        <label for="man">남</label>
+                        <input type="radio" name="gender" id="woman" />
+                        <label for="woman">여</label>
+                      </td>
+                    </tr>
+                  </table>
+                </fieldset>
+              </form>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <fieldset>
+                <legend>사용 가능한 언어</legend>
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="hobby" id="soccor" />
+                      <label for="soccor">HTML</label>
+                      <input type="checkbox" name="hobby" id="baseball" />
+                      <label for="baseball">CSS</label>
+                      <input type="checkbox" name="hobby" id="volleyball" />
+                      <label for="volleyball">java script</label>
+                      <input type="checkbox" name="hobby" id="bascketball" />
+                      <label for="bascketball">Python</label>
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+            </td>
+          </tr>
+
+          <tr>
+            <th><label for="pwcheck">프로필 사진</label></th>
+            <td><input type="file" id="pwcheck" name="password" /></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="확인" />
+              <input type="reset" value="다시쓰기" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>

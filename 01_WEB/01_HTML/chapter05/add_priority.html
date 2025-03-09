@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        /* 전체 선택자 - 0점 */
+        * {
+            color: blue;
+        }
+        /* 일반 태그 선택자 - 1점 */
+        div {
+            color: red;
+        }
+        body {
+            color: pink;
+        }
+        /* class 선택자 - 10점 */
+        .green {
+            color: green;
+        }
+        /* id 선택자 - 100점 */
+        #yellow {
+            color: yellow;
+        }
+        /* !important 붙으면 최고점수 */
+        div {
+            color: red !important;
+        }
+
+        /* !important > 인라인 스타일 > id > class > 태그 순으로 우선순위가 높다 */
+        /* li#id.class 와 같이 복합적으로 되어 있는 선택자는 각 점수를 더하여 계산한다 (111점) */
+        /* :nth-child() 와 같은 가상 클래스는 클래스 선택자 점수로 판단하다 */
+    </style>
+    <body>
+        <!-- 인라인 스타일 - 1000점 -->
+        <div id="yellow" class="green" style="color: orange">안녕하세요</div>
+    </body>
+</html>

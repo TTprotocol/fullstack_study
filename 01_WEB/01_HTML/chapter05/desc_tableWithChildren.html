@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS3 Selector Basic</title>
+        <style>
+            /* table 밑에는 기본적으로 thead, tbody가 추가되기 때문에 후손 선택자를 먼저 사용해야 한다. */
+            table tr > th {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>이름</th>
+                <th>지역</th>
+            </tr>
+            <tr>
+                <td>윤인성</td>
+                <td>서울특별시 강서구 내발산동</td>
+            </tr>
+        </table>
+    </body>
+</html>
