@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            let arr = [1, 10, 20, , 30, , 60];
+
+            for (let i = 0; i < arr.length; i++) {
+                console.log(i, arr[i]); // 1 10 20 undefined 30 undefined 60
+            }
+
+            // undefined 요소는 접근하지 않는다.
+            for (let i in arr) {
+                console.log(i, arr[i]); // 1 10 20 30 60
+            }
+
+            for (let i of arr) {
+                console.log(i); // 1 10 20 undefined 30 undefined 60
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

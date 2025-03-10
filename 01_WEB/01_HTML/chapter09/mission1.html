@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width='device-width', initial-scale=1.0"
+        />
+        <title>Document</title>
+        <script>
+            function getPokemonTypeInfo(type) {
+                switch (type) {
+                    case '불':
+                        console.log(
+                            '🔥 불 타입 포켓몬은 강한 공격력을 가지고 있어!'
+                        );
+                        break;
+                    case '물':
+                        console.log(
+                            '💧 물 타입 포켓몬은 유연한 전투 스타일을 가지고 있어!'
+                        );
+                        break;
+                    case '풀':
+                        console.log('🌿 풀 타입 포켓몬은 회복 능력이 뛰어나!');
+                        break;
+                    default:
+                        console.log('🤔 알 수 없는 타입이네!');
+                        break;
+                }
+            }
+            for (;;) {
+                let type = prompt('타입을 입력하세요!');
+
+                getPokemonTypeInfo(type);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>
