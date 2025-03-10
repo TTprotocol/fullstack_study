@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width='device-width', initial-scale=1.0"
+        />
+        <title>Document</title>
+        <script>
+            let pokedex = [];
+
+            function addPokemon(name, type, level) {
+                pokedex.push({
+                    name: name,
+                    type: type,
+                    level: level,
+                });
+                console.log(name + '이(가) 도감에 등록되었습니다');
+            }
+
+            addPokemon('뮤츠', '에스퍼', 70);
+            addPokemon('망나뇽', '드래곤', 55);
+            console.log('pokedex : ', pokedex);
+
+            // addPokemon('망나뇽2', '드래곤2', 552);
+            // console.log('pokedex : ', pokedex);
+        </script>
+    </head>
+    <body></body>
+</html>
