@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script>
+            window.onload = function () {
+                // let num = document.getElementById('krwInput');
+                // let change = Number(num.value) / 1300;
+
+                // let result = document.getElementById('usdResult');
+                // console.log('chage : ', change);
+
+                // result.innerHTML = `달러(USD): ${change.toLocaleString(
+                //     'en-EN'
+                // )}`;
+
+                let num = document.getElementById('krwInput');
+
+                num.addEventListener('change', function () {
+                    let change = Number(num.value) / 1300;
+
+                    let result = document.getElementById('usdResult');
+                    console.log('chage : ', change);
+
+                    result.innerHTML = `달러(USD): ${change.toLocaleString(
+                        'en-EN'
+                    )}`;
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <input type="number" id="krwInput" placeholder="원화 입력" />
+        <p id="usdResult">달러(USD):</p>
+    </body>
+</html>

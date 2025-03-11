@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script>
+            function addTransaction(num) {
+                let number = Number(num);
+                let table = document.getElementById('transactionHistory');
+                let li = document.createElement('li');
+                let now = new Date();
+                let day =
+                    now.getFullYear() +
+                    '. ' +
+                    now.getMonth() +
+                    '. ' +
+                    now.getDate() +
+                    ' ' +
+                    (now.getHours() > 12 ? '오후 ' : '오전 ') +
+                    (now.getHours() > 12
+                        ? now.getHours() - 12
+                        : now.getHours()) +
+                    ':' +
+                    now.getMinutes() +
+                    ':' +
+                    now.getSeconds();
+                li.textContent = `${number.toLocaleString(
+                    'ko-KO'
+                )}원 이체 완료 - ${day}`;
+
+                table.insertBefore(li, table.firstChild);
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="transactionHistory"></ul>
+
+        <button onclick="addTransaction(100000)">100,000원 이체</button>
+        <button onclick="addTransaction(50000)">50,000원 이체</button>
+    </body>
+</html>

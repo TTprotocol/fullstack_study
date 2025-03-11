@@ -18,9 +18,8 @@
 
                     let send = document.getElementById('amount').value;
                     let sendNum = Number(send);
-                    console.log('isNan(Number(send)) : ', isNaN(sendNum));
 
-                    if (isNaN(sendNum)) {
+                    if (isNaN(sendNum) || Number.isInteger(sendNum)) {
                         message.innerHTML = '유효한 금액을 입력하세요';
                     } else if (send > num) {
                         message.innerHTML = '잔액이 부족합니다';
