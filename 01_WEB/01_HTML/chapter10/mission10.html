@@ -8,19 +8,16 @@
         <script>
             window.onload = function () {
                 let search = document.getElementById('searchInput');
-                let list = document.getElementById('stockList');
+                let list = document.querySelectorAll('#stockList li');
 
-                search.addEventListener('change', function () {
-                    console.log('list.valuse : ', list.children);
-
-                    list.children.forEach((element) => {
-                        map;
-                    });
-                    (item) => {
-                        if (item.textContent.search(search.value) === -1) {
-                            item.setAttribute('display', 'none');
+                search.addEventListener('keyup', function () {
+                    list.forEach((item) => {
+                        if (!item.textContent.includes(search.value)) {
+                            item.style.display = 'none';
+                        } else {
+                            item.style.display = 'block';
                         }
-                    };
+                    });
                 });
             };
         </script>

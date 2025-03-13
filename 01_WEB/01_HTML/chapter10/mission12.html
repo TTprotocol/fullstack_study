@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.onload = function () {
+                let date = document.getElementById('expiryDate');
+                let days = document.getElementById('daysLeft');
+
+                date.addEventListener('change', function () {
+                    let now = new Date();
+                    console.log('date : ', date.value);
+
+                    let day = new Date(date.value) - now;
+                    day = Math.ceil(day / (1000 * 60 * 60 * 24)) - 1;
+
+                    if (day <= 0) days.innerHTML = '만기일이 지났습니다.';
+                    else
+                        days.innerHTML = '만기일까지 ' + day + '일 남았습니다.';
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <input type="date" id="expiryDate" />
+        <p id="daysLeft"></p>
+    </body>
+</html>
