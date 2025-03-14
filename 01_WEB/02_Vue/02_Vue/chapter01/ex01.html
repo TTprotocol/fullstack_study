@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Vue에서 View를 담당함. -->
+        <div id="app">
+            <h2>{{message}}</h2>
+        </div>
+        <!-- CDN 방식으로 서버에서 vue의 js 코드를 가져옴. -->
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let model = { message: 'Hello Vue3' };
+            // 순수하게 데이터만 가진다.
+            // 주로 백엔드로부터 받아온다.
+
+            // 나는 model에 있는 message를 View의 h2에 넣고싶다.
+            // => Vue 모델을 만들어서 연계
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    // data() 함수가 리턴하는 프로퍼티만 탬플릿의 데이터로 쓸 수 있다.
+                    return model; // 이 데이터가 수정되면 알아서 화면이 변경된다. => moniter가 감시 중.
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>
