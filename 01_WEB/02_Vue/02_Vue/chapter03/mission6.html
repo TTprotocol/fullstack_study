@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2>추천 고백 장소 TOP3</h2>
+            <ul>
+                <li v-for="(item, index) in place" :key="index">
+                    {{ index + 1 }}. {{ item }}
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let place = ['광안리', '해운대', '서면', '동래', '초량'];
+            place = place.slice(0, 3); // 앞에서 3개만 선택
+
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return { place };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <label>
+                <input type="checkbox" v-model="check" />
+                식사 준비 됐나요?
+            </label>
+            <h3 v-show="check">지금 바로 달려~~</h3>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        check: false,
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

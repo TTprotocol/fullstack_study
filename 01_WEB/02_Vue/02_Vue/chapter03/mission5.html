@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            배고픔 지수 : <input v-model="balance" />
+            <br />
+            남은 체력 :
+            <span v-if="balance >= 1200">&#x1f49c; I'm Full</span>
+            <span v-else-if="balance >= 800">&#x1f497; More Food!</span>
+            <span v-else-if="balance >= 400">&#x2665; Hungry!</span>
+            <span v-else="balance">&#x2661; I'm dying...</span>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        balance: '',
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

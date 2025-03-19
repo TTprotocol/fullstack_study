@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2>마음 속 이유 (다중 선택) :</h2>
+            <label v-for="(item, index) in place" :key="index">
+                <input type="checkbox" :value="item" v-model="love" />
+                {{ item }}
+            </label>
+
+            <br />
+            <br />
+            <span v-show="love.length"> 선택 항목 ({{love.length}}개): </span>
+            <span
+                v-for="(item, index) in love"
+                :value="item"
+                :key="index"
+                v-if="love.length >= 1"
+            >
+                {{item}},
+            </span>
+            <span v-else="love">아직 이유를 고르지 않았어요!</span>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let place = [
+                '웃을 때 예뻐서',
+                '마음이 따뜻해서',
+                '함께 있으면 편안해서',
+                '내 편이 되어줘서',
+                '배려심이 깊어서',
+            ];
+
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return { place, love: [] };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            #list {
+                width: 600px;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            #list td,
+            #list th {
+                border: 1px solid black;
+                text-align: center;
+            }
+            #list > thead > tr {
+                color: yellow;
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <select id="regions">
+                <option disabled="disabled" selected>지역 선택</option>
+                <!-- 객체의 경우 value와 key를 따로 꺼내줄 수 있다. -->
+                <option v-for="(val, key) in regions" :value="key" :key="key">
+                    {{val}}
+                </option>
+            </select>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        regions: {
+                            A: 'Asia',
+                            B: 'America',
+                            C: 'Europe',
+                            D: 'Africa',
+                            E: 'Oceania',
+                        },
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

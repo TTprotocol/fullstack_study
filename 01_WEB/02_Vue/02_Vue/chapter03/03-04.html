@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 
+                v-model 디렉티브 : 양방향 데이터 바인딩 (데이터 <-> 화면)
+                주로 사용자가 입력하는 form 요소에 바인딩
+                => 한글 입력의 경우 한 박자 늦게 뜨는 문제가 있다. (03-08.html)
+            -->
+            <input type="text" v-model="name" />
+            <br />
+            입력한 값 : <span>{{name}}</span>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        name: '',
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>
