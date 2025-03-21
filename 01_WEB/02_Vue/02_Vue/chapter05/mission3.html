@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            이름 : <input type="text" v-model="name" /> <br />
+            출생 연도 : <input type="text" v-model.number="birth" />
+            <br />
+            <br />
+            <span>{{printMessage}}</span>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        name: '',
+                        birth: 0,
+                        house: '',
+                        age: 0,
+                        message: '',
+                    };
+                },
+                watch: {
+                    birth(birth) {
+                        this.age = 2025 - birth + 1;
+                    },
+                    name(name) {
+                        if (
+                            /^[aeiouAEIOU아에이오우애어여오유으이]/.test(name)
+                        ) {
+                            this.house = `그리핀도르`;
+                        } else if (name.length > 5) {
+                            this.house = `래번클로`;
+                        } else if (/nㄴ$/.test(name)) {
+                            this.house = `후플푸프`;
+                        } else {
+                            this.house = `슬리데린`;
+                        }
+                    },
+                },
+                computed: {
+                    printMessage() {
+                        if (this.house === '' || this.age === 0) {
+                            return '조건을 충족해주세요!';
+                        } else if (this.age < 11 || this.age > 19) {
+                            return '입학 대상 연령이 아닙니다.';
+                        } else {
+                            return `${this.name}님은 ${this.house}에 배정되었습니다. 나이: ${this.age}`;
+                        }
+                    },
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

@@ -14,7 +14,7 @@
 
             <p v-show="time < 17">아직 준비할 항목:</p>
             <ul v-if="time < 17">
-                <li v-for="(item, index) in place" ::key="index">- {{item}}</li>
+                <li v-for="(item, index) in place" :key="index">- {{item}}</li>
             </ul>
             <p v-else="time">
                 마감 임박! 아래 항목 중 마지막으로 남은 준비: {{place.splice(-1,

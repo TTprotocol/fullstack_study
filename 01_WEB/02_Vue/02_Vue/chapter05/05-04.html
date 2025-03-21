@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 현재 사용자가 입력한 value 값을 데이터에 있는 name에 반영 -->
+            <input
+                type="text"
+                :value="name"
+                @input="(e) => this.name = e.target.value"
+            />
+            <br />
+            이름 : <span>{{name}}</span>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        name: '',
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>
