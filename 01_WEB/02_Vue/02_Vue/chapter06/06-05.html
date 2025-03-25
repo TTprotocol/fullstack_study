@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .buttonColor {
+                background-color: aqua;
+                color: black;
+            }
+            .buttonLayout {
+                text-align: center;
+                width: 120px;
+            }
+            .staticBorder {
+                border: khaki dashed 1px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- class에 바인딩된 값은 css 선택자에서 찾을 수 있지만, :class에 바인딩된 값은 script에서 찾아야 한다. -->
+            <button class="staticBorder" :class="myColor">테스트</button>
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return {
+                        // 여러개의 클래스를 적용할 때는 띄어쓰기로 삽입
+                        // 클래스가 많을 때는 문자열을 일일이 변경해야 하기 때문에 비효율적이다.
+                        myColor: 'buttonColor buttonLayout',
+                    };
+                },
+            }).mount('#app');
+        </script>
+    </body>
+</html>

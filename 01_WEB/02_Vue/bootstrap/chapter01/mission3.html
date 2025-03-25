@@ -21,46 +21,52 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="container mt-3">
-            <h2><i class="fa-solid fa-right-to-bracket"></i> 로그인</h2>
-            <form>
-                <div class="d-grid gap-3 mb-3 mt-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-user"></i> 사용자 ID:
-                        <input type="text" class="form-control" />
-                    </label>
-                </div>
-                <div class="d-grid gap-3 mb-3 mt-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-lock"></i> 비밀번호:
-                        <input type="text" class="form-control" />
-                    </label>
-                </div>
-                <div class="d-grid gap-3 mb-3 mt-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-lock"></i> 비밀번호 확인:
-                        <input type="text" class="form-control" />
-                    </label>
-                </div>
-                <div class="d-grid gap-3 mb-3 mt-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-lock"></i> email:
-                        <input type="text" class="form-control" />
-                    </label>
-                </div>
-                <div class="d-grid gap-3 mb-3 mt-3">
-                    <label class="form-label">
-                        <i class="fa-solid fa-user-astronaut"></i> 아바타
-                        이미지:
-                        <input type="file" class="form-control" />
-                    </label>
-                </div>
-                <div class="mb-3 mt-3 d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">
-                        <i class="fa-solid fa-user-plus"></i> 회원가입
-                    </button>
-                </div>
-            </form>
+        <div id="app" class="container-fluid">
+            <h3>1번 문제 : 도착 열차 정보 테이블</h3>
+            <button class="btn btn-primary" @click="clickButton">
+                <i class="fa-solid fa-train-subway"></i> 도착 열차 보기
+            </button>
+            <table class="table table-striped table-borderless" v-show="show">
+                <thead>
+                    <tr>
+                        <th>열차</th>
+                        <th>방면</th>
+                        <th>남은 시간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fa-solid fa-train"></i> 급행</td>
+                        <td>강남행</td>
+                        <td>3분</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-train"></i> 일반</td>
+                        <td>잠실행</td>
+                        <td>5분</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-train"></i> 특급</td>
+                        <td>종묘행</td>
+                        <td>1분</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            let vm = Vue.createApp({
+                name: 'App',
+                data() {
+                    return { show: false };
+                },
+                methods: {
+                    clickButton() {
+                        this.show = !this.show;
+                    },
+                },
+            }).mount('#app');
+        </script>
     </body>
 </html>
