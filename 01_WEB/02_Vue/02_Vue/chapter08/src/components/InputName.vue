@@ -1,4 +1,6 @@
 <template>
+    <!-- name을 부모에게 받아오고, 
+     변경됐을 때 부모에게 이벤트로 변경된 값 전송 -->
     <input
         type="text"
         :value="name"

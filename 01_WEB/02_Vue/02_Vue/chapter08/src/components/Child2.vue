@@ -10,7 +10,8 @@ export default {
 };
 </script>
 
-<style>
+<!-- scoped를 붙이면 해당 컴포넌트 내에서만 스타일 적용 -->
+<style scoped>
 .child {
     background-color: blue;
     border: 1px solid black;

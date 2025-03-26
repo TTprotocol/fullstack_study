@@ -14,11 +14,13 @@
         </footer>
     </div>
 </template>
+
 <script>
 export default {
     name: 'Layout',
 };
 </script>
+
 <style scoped>
 body {
     margin: 40px;
@@ -42,6 +44,11 @@ body {
     grid-template-rows: 100px 1fr 100px;
     grid-template-columns: 1fr 200px;
     grid-template-areas: 'header header' 'content sidebar' 'footer footer';
+    /* 
+    [header     header]
+    [content    sidebar]
+    [footer     footer]
+    */
     background-color: #fff;
     color: #444;
 }

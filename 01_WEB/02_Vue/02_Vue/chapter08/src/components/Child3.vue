@@ -1,5 +1,5 @@
 <template>
-    <div class="$style.child">
+    <div :class="$style.child">
         <h2>Child3</h2>
     </div>
 </template>

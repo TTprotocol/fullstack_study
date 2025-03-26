@@ -1,14 +1,14 @@
 <template>
     <Layout>
-        <template v-slot:header>
+        <template #header>
             <h2>헤더 영역</h2>
         </template>
-        <template v-slot:sidebar>
+        <template #sidebar>
             <h3>사이드</h3>
             <h3>사이드</h3>
             <h3>사이드</h3>
         </template>
-        <template v-slot:default>
+        <template #default>
             <h1>컨텐트 영역</h1>
             <h1>컨텐트 영역</h1>
             <h1>컨텐트 영역</h1>
@@ -16,7 +16,7 @@
             <h1>컨텐트 영역</h1>
             <h1>컨텐트 영역</h1>
         </template>
-        <template v-slot:footer>
+        <template #footer>
             <h2>Footer text</h2>
         </template>
     </Layout>

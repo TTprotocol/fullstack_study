@@ -8,10 +8,13 @@
             :checked="item.checked"
             @check-changed="CheckBoxChanged"
         >
-            <template v-slot:icon>
+            <!-- 체크 여부에 따라 icon을 변경하는 슬롯 -->
+            <!-- v-slot을 축약하여 #으로 쓸 수 있다. -->
+            <template #icon>
                 <i v-if="item.checked" class="far fa-grin-beam"></i>
                 <i v-else class="far fa-frown"></i>
             </template>
+            <!-- 체크 여부에 따라 span을 변경하는 슬롯 -->
             <template v-slot:label>
                 <span
                     v-if="item.checked"

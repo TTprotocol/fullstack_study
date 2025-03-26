@@ -2,10 +2,13 @@
     <div>
         <h3>당신이 경험한 프론트 엔드 기술은?(네번째:ScopedSlot)</h3>
         <CheckBoxList :items="items" @check-changed="CheckBoxChanged">
+            <!-- p1이라는 객체 이름은 슬롯 내부에서만 이용 하등. -->
             <template v-slot:icon="p1">
                 <i v-if="p1.checked" class="far fa-grin-beam"></i>
                 <i v-else class="far fa-frown"></i>
             </template>
+            <!-- 체크 여부에 따라 span을 변경하는 슬롯 -->
+
             <template v-slot:default="p2">
                 <span
                     v-if="p2.checked"
