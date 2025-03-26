@@ -18,6 +18,14 @@ export default {
         Child2,
         Child3,
     },
+    methods: {
+        changeTab(tab) {
+            this.currentTab = tab;
+        },
+        mission1Click(message) {
+            console.log(message);
+        },
+    },
 };
 </script>
 
