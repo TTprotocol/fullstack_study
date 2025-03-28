@@ -4,7 +4,10 @@
         <Mission1 @ready="mission1Click">
             오늘도 넌 멋질 거야! 🎤 자신 있게 무대에 올라가!
         </Mission1>
-        <Mission2 v-if="message !== ''"></Mission2>
+        <Mission2 v-if="message !== ''">
+            <template #tip>test</template>
+            <template #image>test</template>
+        </Mission2>
     </div>
 </template>
 

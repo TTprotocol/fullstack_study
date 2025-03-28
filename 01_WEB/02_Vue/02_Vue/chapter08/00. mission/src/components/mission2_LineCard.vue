@@ -1,5 +1,5 @@
 <template>
-    <div class="card mt-4">
+    <div class="card mt-4 p-3 d-flex align-self-center text-center">
         <div v-if="currentLine.line === ''">
             <h2>아직 대사가 없습니다. 버튼을 눌러주세요!</h2>
         </div>
@@ -8,10 +8,16 @@
             <p>{{ currentLine.source }}</p>
         </div>
 
-        <button @click="click" class="btn btn-primary">랜덤 대사 뽑기</button>
+        <button @click="click" class="btn btn-primary mb-3">
+            랜덤 대사 뽑기
+        </button>
         <p>오늘의 즉흥 대사입니다!</p>
-        <slot name="tip"></slot>
-        <slot name="image"></slot>
+        <div class="card card-body p-3">
+            <slot name="tip"></slot>
+        </div>
+        <div class="card card-img-top p-3">
+            <slot name="image"></slot>
+        </div>
     </div>
 </template>
 
