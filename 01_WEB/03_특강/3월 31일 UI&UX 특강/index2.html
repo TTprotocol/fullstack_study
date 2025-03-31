@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style2.css" />
+    </head>
+    <body>
+        <!-- 
+        B(Block).E(Element).M(Modifier) 방법론 
+        css 작성 시 꼬리를 물지 않게 된다. .layout .slidebar ... 이 되지 않는다.
+        또 협업 시 이러한 규칙을 문서화하지 않아도 된다. 
+        -->
+        <header class="header">
+            <!-- header라는 블럭의 title이라는 element라는 걸 나타낸다. -->
+            <h1 class="header__title">My project</h1>
+        </header>
+        <div class="layout">
+            <aside class="slidebar">
+                <nav class="slidebar__nav">
+                    <ul>
+                        <li><a href="#">Introduce</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Usage</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="main">
+                <h2>Documentation</h2>
+                <p>
+                    l Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    In, ducimus rem? Nam voluptate voluptatibus, asperiores
+                    doloribus omnis repellat fugit molestiae aperiam officiis,
+                    facilis nihil sapiente quaerat assumenda qui. Obcaecati
+                    architecto aliquam illo, ad, aut vel ea eaque velit, rerum
+                    accusantium suscipit enim saepe quidem ex adipisci.
+                    Consequuntur impedit pariatur quibusdam dolorum similique
+                    esse, nam excepturi et fugit cum commodi, eum ipsa.
+                    Cupiditate porro, temporibus fugit delectus earum et non
+                    repellendus laboriosam possimus fuga numquam ea odit aliquam
+                    dolore dolores alias corrupti! Reprehenderit ea asperiores
+                    nulla delectus, expedita quas, id quidem quam ab, nisi minus
+                    esse soluta in! Magni, aliquid. Ipsam beatae quis inventore,
+                    sint, cupiditate saepe illo quibusdam eos enim perferendis
+                    ipsum quasi iste magni voluptatibus sapiente blanditiis
+                    adipisci nobis!
+                </p>
+            </main>
+        </div>
+        <footer class="footer">
+            <p class="footer__text">@ 2025 my project</p>
+        </footer>
+    </body>
+</html>
