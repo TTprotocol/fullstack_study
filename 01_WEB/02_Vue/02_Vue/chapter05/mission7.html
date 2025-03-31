@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#app {
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="add('stick')">지팡이 추가</button>
+			<button @click="add('robe')">로브 추가</button>
+			<button @click="add('owl')">부엉이 추가</button>
+			<br />
+			<h3>장바구니 :</h3>
+			<ul>
+				<li v-for="(item, index) in list" :key="index">
+					- {{item.name}} ({{item.price}}G)
+					<button @click="remove(index)">삭제</button>
+				</li>
+			</ul>
+			<p>총 합계 : {{score}}</p>
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script>
+			let vm = Vue.createApp({
+				name: "App",
+				data() {
+					return { list: [], score: 0 };
+				},
+				watch: {},
+				methods: {
+					add(which) {
+						if (which === "stick") {
+							this.score += 100;
+							this.list.push({ name: which, price: 100 });
+						} else if (which === "robe") {
+							this.score += 200;
+							this.list.push({ name: which, price: 200 });
+						} else if (which === "owl") {
+							this.score += 300;
+							this.list.push({ name: which, price: 300 });
+						}
+					},
+					remove(item) {
+						console.log("item : ", item);
+						let which = this.list[item];
+						this.score -= which.price;
+						this.list.splice(item, 1);
+					},
+				},
+				computed: {},
+			}).mount("#app");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			마법이론 : <input type="text" v-model.number="masic" /><br />
+			주문실습 : <input type="text" v-model.number="spell" /><br />
+			비행수업 : <input type="text" v-model.number="fly" /><br />
+			<button @click="sub">평가하기</button><br /><br />
+			<p>{{result}}</p>
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script>
+			let vm = Vue.createApp({
+				name: "App",
+				data() {
+					return { masic: 0, spell: 0, fly: 0, result: "" };
+				},
+				watch: {
+					masic(value) {
+						if (value > 100 || value < 0) {
+							alert("점수는 0~100 사이로 입력해주세요!");
+						}
+					},
+
+					spell(value) {
+						if (value > 100 || value < 0) {
+							alert("점수는 0~100 사이로 입력해주세요!");
+						}
+					},
+
+					fly(value) {
+						if (value > 100 || value < 0) {
+							alert("점수는 0~100 사이로 입력해주세요!");
+						}
+					},
+				},
+				methods: {
+					sub() {
+						if (this.average >= 90) {
+							this.result = "최우수 합격! (평균: " + this.average + "점)";
+						} else if (this.average >= 70) {
+							this.result = "합격 (평균: " + this.average + "점)";
+						} else {
+							this.result = "불합격 (평균: " + this.average + "점)";
+						}
+					},
+				},
+				computed: {
+					average() {
+						return (this.masic + this.spell + this.fly) / 3;
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<title>Bootstrap 5</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container-fluid">
+			<h3>4번 문제 : 열차 출발 대기</h3>
+			<!-- 버튼 클릭 시 카운트다운 시작 -->
+			<button
+				class="btn btn-primary"
+				@click="startCountdown"
+				:disabled="isCountingDown"
+			>
+				<!-- 버튼 텍스트가 카운트다운에 따라 변경 -->
+				<i class="fa-solid fa-spinner" v-show="isCountingDown"></i> {{
+				buttonText }}
+			</button>
+
+			<!-- 결과 메시지 -->
+			<div v-if="message" class="mt-3">
+				<h4
+					:class="message === '열차가 출발했습니다!' ? 'text-success' : 'text-danger'"
+				>
+					{{ message }}
+				</h4>
+			</div>
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script>
+			let vm = Vue.createApp({
+				name: "App",
+				data() {
+					return {
+						isCountingDown: false, // 카운트다운 진행 여부
+						message: "", // 결과 메시지
+						buttonText: "열차 출발 버튼", // 버튼 텍스트 초기값
+						remainingTime: 5, // 남은 시간 초기값
+						intervalId: null, // 타이머 ID (카운트다운을 관리하기 위해)
+					};
+				},
+				methods: {
+					// 버튼 클릭 시 카운트다운 시작
+					startCountdown() {
+						this.isCountingDown = true;
+						this.message = ""; // 이전 메시지 초기화
+						this.remainingTime = 5; // 카운트다운 시작
+						this.buttonText = `출발까지 ${this.remainingTime}초...`;
+
+						// 1초마다 시간 갱신
+						this.intervalId = setInterval(() => {
+							this.remainingTime--;
+							this.buttonText = `출발까지 ${this.remainingTime}초...`;
+
+							// 5초가 되면 카운트다운 종료
+							if (this.remainingTime <= 0) {
+								clearInterval(this.intervalId);
+								this.checkTrainStatus(); // 5초 후 열차 출발 여부 체크
+							}
+						}, 1000);
+					},
+
+					// 열차 출발 여부를 랜덤으로 결정
+					checkTrainStatus() {
+						// 70% 확률로 "열차 출발했습니다!" 또는 30% 확률로 "열차 지연"
+						if (Math.random() > 0.3) {
+							this.message = "열차가 출발했습니다!";
+						} else {
+							this.message = "열차 지연! 5분 기다려주세요!";
+						}
+						// 버튼 텍스트 다시 초기화
+						this.buttonText = "열차 출발 버튼";
+						this.isCountingDown = false; // 카운트다운 종료
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="app">
+			<h2>호그와트 마법 도서관 출입 관리 시스템</h2>
+			<br />
+
+			마법사 이름 입력 : <input type="text" v-model="name" />
+			<button @click="add" :disabled="show">출입 기록 추가</button>
+			<br />
+			<p v-show="show" style="color: red">
+				⚠ 현재 도서관 인원 포화 상태입니다! 더 이상 출입할 수 없습니다.
+			</p>
+			<br />
+
+			현재 도서관 출입 중 (최근 순) :
+			<ul>
+				<li v-for="(user, index) in list" :key="index">
+					{{ index + 1 }}. {{ user }}
+					<button @click="remove(index)">퇴장</button>
+				</li>
+			</ul>
+			<br />
+
+			출입 횟수 통계 :
+			<ul>
+				<li v-for="(user, index) in count" :key="index">
+					{{ user.name }} : {{ user.count }}회 출입
+				</li>
+			</ul>
+			<br />
+			가장 많이 출입한 마법사 : {{ mostFrequent }}
+		</div>
+
+		<script src="https://unpkg.com/vue"></script>
+		<script>
+			let vm = Vue.createApp({
+				name: "App",
+				data() {
+					return {
+						name: "",
+						list: [],
+						count: [],
+						most: "",
+						show: false,
+						alertTriggered: false, // 5명 초과 경고 여부
+					};
+				},
+				created() {
+					console.log("도서관 관리 시스템 가동!");
+				},
+				mounted() {
+					console.log("도서관 준비 완료!");
+				},
+				watch: {
+					list: {
+						handler(newList) {
+							// 5명 초과 경고 처리 (한 번만 출력)
+							if (newList.length >= 5 && !this.alertTriggered) {
+								console.log("현재 도서관 인원 포화!");
+								this.alertTriggered = true;
+							}
+							// 인원이 줄어들면 경고 상태 해제
+							if (newList.length < 5) {
+								this.alertTriggered = false;
+							}
+						},
+						deep: true,
+					},
+				},
+				methods: {
+					add() {
+						// 중복 출입 방지
+						if (this.list.includes(this.name)) {
+							console.log(`${this.name}은(는) 이미 출입 중입니다!`);
+							return;
+						}
+
+						// 도서관 포화 상태 확인
+						if (this.list.length >= 5) {
+							this.show = true;
+							this.name = "";
+							return;
+						}
+
+						// 출입 목록에 추가 (최신 순)
+						this.list.unshift(this.name);
+
+						// 출입 횟수 기록
+						let user = this.count.find((u) => u.name === this.name);
+						if (user) {
+							user.count++;
+						} else {
+							this.count.push({ name: this.name, count: 1 });
+						}
+
+						this.name = ""; // 입력값 초기화
+					},
+					remove(index) {
+						this.list.splice(index, 1);
+						this.show = false; // 인원 감소 시 버튼 활성화
+					},
+				},
+				computed: {
+					// 가장 많이 출입한 마법사 찾기
+					mostFrequent() {
+						if (this.count.length === 0) return "";
+
+						let maxEntry = Math.max(...this.count.map((u) => u.count));
+						let mostFrequentUser = this.count.find((u) => u.count === maxEntry);
+
+						return mostFrequentUser
+							? `${mostFrequentUser.name} (${mostFrequentUser.count}회)`
+							: "";
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>
