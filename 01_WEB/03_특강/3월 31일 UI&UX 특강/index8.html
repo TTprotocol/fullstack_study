@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 
+        성능 최적화와 사용자 경험 
+        
+        1. 성능 최적화(= 페이지 로딩 속도를 최적화)
+            1. 성능 최적화가 중요한 이유
+                1. 사용자 이탈율이 감소 (로딩이 1초가 늦어지면 이탈율 32% 증가.)
+                2. 검색 엔진 최적화(SEO)에 긍정적인 역할
+                3. 사용자 만족도가 올라가니까, 전환율이 향상
+                    ex) 토스(toss)의 서비스가 잘 제공되면 다른 서비스보다 토스를 쓸 가능성이 늘어남.
+            
+            2. 성능 최적화 방법?
+                1. 이미지 최적화
+                    1. jpeg, png 등 이미지를 압축해서 사용 => 이미지 다운로드 시간이 단축됨.
+                2. 폰트 최적화
+                    1. 대부분의 폰트는 모든 언어셋을 지원한다.
+                    2. Noto Sans라는 폰트는 영어, 프랑스어, 베트남어, 독일어, 한국어... 를 모두 포함하고 있다.
+                        => 만약 타겟팅이 명확하다면(가령 한국에서만 사용한다면), 한국어를 제외한 다른 언어셋을 유지할 이유가 없다.
+                3. 불필요한 리렌더링 최소화
+                    1. Vue는 자동으로 리렌더링을 최소화 해주지만, React는 그렇지 않다.
+                4. 성능 측정 도구(LightHouse) 사용
+                5. Lazy Load라는 지연 로딩 기법 사용 (리소스를 지연해서 로딩함)
+        -->
+
+        <!-- 이미지 최적화 방법 -->
+        <!-- <img src="./images/orion-2942261.jpg" alt="" /> -->
+        <!-- 
+        원래 이 이미지는 8.3M이고, 다운 속도는 대략 50ms~70ms 정도 나온다.
+        여기에 개발자도구 - Network - Disable cache를 체크하게 되면 항상 이미지를 다운로드 받아 오므로, 속도가 많이 나온다.
+        하지만 체크를 해제하고 새로고침 하게 되면 속도가 엄청나게 줄어들게 된다.
+
+        또 tinypng 사이트에서 이미지를 압축할 수 있다.
+        => 이미지는 문자열로 구성되어 있기 때문에, 문자열 간의 공백을 줄이는 것으로 압축할 수 있다.
+        -->
+
+        <!-- lazy load 방법 -->
+        <!-- <h2>스크롤을 내려보세요</h2> -->
+        <!-- 
+        이 1200px 짜리 화면을 보는 동안은 고양이 이미지를 사용하지 않는다. 
+        => lazt loading : 이미지 로딩을 필요할 때 한다.
+        -->
+        <!-- <div style="height: 1200px"></div>
+        <img src="https://placecats.com/400/400" alt="400" loading="lazy" />
+        <img src="https://placecats.com/401/401" alt="401" loading="lazy" />
+        <img src="https://placecats.com/402/402" alt="402" loading="lazy" />
+        <img src="https://placecats.com/403/403" alt="403" loading="lazy" />
+        <img src="https://placecats.com/404/404" alt="404" loading="lazy" />
+        <img src="https://placecats.com/405/405" alt="405" loading="lazy" />
+        <img src="https://placecats.com/406/406" alt="406" loading="lazy" />
+        <img src="https://placecats.com/407/407" alt="407" loading="lazy" />
+        <!-- lazy라는 속성값에 의해서 필요하게 되었을 때 이미지를 불러온다. -->
+    </body>
+    -->
+</html>
