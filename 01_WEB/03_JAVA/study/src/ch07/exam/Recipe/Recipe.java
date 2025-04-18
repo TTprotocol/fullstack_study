@@ -11,7 +11,7 @@ public abstract class Recipe {
         this.isVegan = isVegan;
     }
 
-    public abstract void getDescription();
+    public abstract String getDescription();
 
-    public abstract void toStringMethod();
+    public abstract String toString();
 }

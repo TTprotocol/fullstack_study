@@ -1,14 +1,14 @@
 package ch07.exam.Recipe;
 
-public class KoreanRecipe extends Recipe {
+public class VeganRecipe extends Recipe {
 
-    public KoreanRecipe() {
-        super("김치찌개", 20, false);
+    public VeganRecipe() {
+        super("두부 샐러드", 10, true);
     }
 
     @Override
     public String getDescription() {
-        return "매콤한" + title + "를 추천합니다.";
+        return "신선한 " + title + "를 추천합니다.";
     }
 
     @Override
