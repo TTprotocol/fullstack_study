@@ -1,0 +1,629 @@
+문제1] 프로젝트 생성 및 초기화 명령
+npm init vue contacts-app
+
+문제2] json-server 실행 명령
+json-server contacts.json
+
+문제3-1] src/router/index.js 작성
+import { createRouter, createWebHistory } from "vue-router";
+import ContactListPage from "@/pages/ContactListPage.vue";
+import ContactDetailPage from "@/pages/ContactDetailPage.vue";
+import ContactWritePage from "@/pages/ContactWritePage.vue";
+import ContactEditPage from "@/pages/ContactEditPage.vue";
+
+const router = createRouter({
+	history: createWebHistory(import.meta.env.BASE_URL),
+	routes: [
+		{
+			path: "/contacts",
+			name: "contacts",
+			component: ContactListPage,
+		},
+		{
+			path: "/contacts/detail/:id",
+			name: "contacts/detail",
+			component: ContactDetailPage,
+		},
+		{
+			path: "/contacts/write",
+			name: "contact/write",
+			component: ContactWritePage,
+		},
+		{
+			path: "/contacts/edit/:id",
+			name: "contacts/edit",
+			component: ContactEditPage,
+		},
+	],
+});
+
+export default router;
+
+
+문제3-2] src/App.vue 작성
+<template>
+	<div id="app">
+		<router-view></router-view>
+	</div>
+</template>
+
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+</script>
+
+<style scoped>
+#app {
+	margin: 0;
+	padding: 10px;
+}
+</style>
+
+
+문제4] src/pages/ContactListPage.vue 작성
+<template>
+	<div>
+		<h1><i class="fa-solid fa-address-book"></i> 연락처</h1>
+		<div>
+			<table class="table">
+				<thead>
+					<tr>
+						<td>id</td>
+						<td>name</td>
+						<td>tel</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="contact in data.contactsList" :key="contact.id">
+						<td>{{ contact.id }}</td>
+						<td @click="router.push(`/contacts/detail/${contact.id}`)">
+							<img :src="contact.photo" alt="#" id="image" />
+							{{ contact.name }}
+						</td>
+						<td>{{ contact.tel }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="addContacts">
+				<button
+					id="addContactsBtn"
+					class="btn btn-primary"
+					@click="router.push(`/contacts/write`)"
+				>
+					<i class="fa-solid fa-pen-to-square"></i> 새 연락처
+				</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script setup>
+import { reactive, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import axios from "axios";
+
+const BASEULI = "/api/contacts";
+const router = useRouter();
+const data = reactive({ contactsList: [] });
+
+onMounted(() => {
+	fetchData();
+});
+
+const fetchData = async () => {
+	try {
+		const response = await axios.get(BASEULI);
+
+		if (response.status === 200) {
+			data.contactsList = response.data;
+		} else {
+			console.log("contactsList 조회 실패!");
+		}
+	} catch (error) {
+		console.log("contactsList Axios 실패! : ", error);
+	}
+};
+
+const MoveDetail = () => {};
+</script>
+
+<style scoped>
+#image {
+	width: 1rem;
+	border-radius: 50%;
+}
+#addContacts {
+	position: relative;
+}
+#addContactsBtn {
+	position: absolute;
+	right: 0;
+}
+</style>
+
+
+문제5] src/pages/ContactDetailPage.vue 작성
+<template>
+	<div id="app">
+		<h1><i class="fa-solid fa-address-card"></i> 연락처</h1>
+		<div id="card_component" class="card">
+			<div id="image_container">
+				<img id="image" :src="data.detailData.photo" alt="#" />
+			</div>
+			<div id="card_contents">
+				<div>
+					<ul id="contents">
+						<li>
+							<div>ID</div>
+							<div>{{ data.detailData.id }}</div>
+						</li>
+						<li>
+							<div>name</div>
+							<div>{{ data.detailData.name }}</div>
+						</li>
+						<li>
+							<div>tel</div>
+							<div>{{ data.detailData.tel }}</div>
+						</li>
+						<li>
+							<div>address</div>
+							<div>{{ data.detailData.address }}</div>
+						</li>
+					</ul>
+				</div>
+				<div id="button_group">
+					<button class="btn btn-primary" @click="router.push(`/contacts`)">
+						<i class="fa-solid fa-list"></i> 목록
+					</button>
+					<button
+						class="btn btn-primary"
+						@click="router.push(`/contacts/edit/${data.detailData.id}`)"
+					>
+						<i class="fa-solid fa-pen-to-square"></i> 수정
+					</button>
+					<button class="btn btn-danger" @click="modalControll">
+						<i class="fa-solid fa-trash-can"></i> 삭제
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="modal" v-show="showModal">
+			<h3 id="title">삭제하시겠습니까?</h3>
+			<div id="modal_burron_group">
+				<button class="btn btn-danger" @click="deleteHandle">삭제</button>
+				<button class="btn btn-primary" @click="modalControll">취소</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script setup>
+import { ref, reactive, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import axios from "axios";
+
+const BASEURI = "/api/contacts/";
+const router = useRouter();
+const route = useRoute();
+
+let showModal = ref(false);
+const id = ref("");
+const data = reactive({ detailData: {} });
+
+onMounted(() => {
+	fetchData();
+});
+
+const fetchData = async () => {
+	try {
+		const response = await axios.get(BASEURI + route.params.id);
+
+		if (response.status === 200) {
+			data.detailData = response.data;
+		} else {
+			console.log("detailData 조회 실패!");
+		}
+	} catch (error) {
+		console.log("detailData 조회 실패! : ", error);
+	}
+};
+
+const modalControll = () => {
+	showModal.value = !showModal.value;
+};
+
+const deleteHandle = async () => {
+	try {
+		const response = await axios.delete(BASEURI + route.params.id);
+
+		if (response.status === 200) {
+			router.push("/contacts");
+		} else {
+			console.log("삭제 실패!");
+		}
+	} catch (error) {
+		console.log("삭제 실패! : ", error);
+	}
+};
+</script>
+
+<style scoped>
+#app {
+	position: relative;
+}
+#card_component {
+	display: flex;
+	flex-direction: row;
+	padding: 20px;
+}
+#image_container {
+	width: 30%;
+}
+#image {
+	width: 100%;
+	border-radius: 20%;
+}
+#card_contents {
+	width: 70%;
+	padding: 20px;
+}
+#contents > li {
+	display: flex;
+}
+#contents > li > div:first-child {
+	width: 50%;
+}
+
+#button_group {
+	margin-left: 30px;
+}
+#button_group > button {
+	margin-right: 10px;
+}
+
+#modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 500px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	box-shadow: 5px 5px gray;
+}
+
+#modal_burron_group {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	/* border: 1px solid red; */
+}
+</style>
+
+
+문제6] src/pages/ContactWritePage.vue 작성
+<template>
+	<div id="app">
+		<h1><i class="fa-solid fa-pen-to-square"></i> 새연락처</h1>
+		<div class="form">
+			<label for="name">name:</label>
+			<input
+				id="name"
+				type="text"
+				class="form-control"
+				placeholder="이름을 입력하세요"
+				v-model="data.name"
+				required
+			/>
+		</div>
+		<div class="form">
+			<label for="tel">tel:</label>
+			<input
+				id="tel"
+				type="text"
+				class="form-control"
+				placeholder="전화번호를 입력하세요"
+				v-model="data.tel"
+				required
+			/>
+		</div>
+		<div class="form">
+			<label for="address">address:</label>
+			<input
+				id="address"
+				type="text"
+				class="form-control"
+				placeholder="주소를 입력하세요"
+				v-model="data.address"
+			/>
+		</div>
+		<div class="form">
+			<label for="photo">photo url:</label>
+			<input
+				id="photo"
+				type="text"
+				class="form-control"
+				placeholder="사진의 url을 입력하세요"
+				v-model="data.photo"
+			/>
+		</div>
+		<div id="button_group">
+			<button class="btn btn-primary check_button" @click="modalControll">
+				<i class="fa-solid fa-check"></i>확인
+			</button>
+			<button class="btn btn-primary" @click="router.push(`/contacts`)">
+				<i class="fa-solid fa-rotate-left"></i>취소
+			</button>
+		</div>
+		<div id="modal" v-show="showModal">
+			<h3 id="title">저장하시겠습니까?</h3>
+			<div id="modal_burron_group">
+				<button class="btn btn-danger" @click="createHandle">저장</button>
+				<button class="btn btn-primary" @click="modalControll">취소</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script setup>
+import { ref, reactive, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import axios from "axios";
+
+const BASEURI = "/api/contacts";
+const router = useRouter();
+const route = useRoute();
+
+let showModal = ref(false);
+const id = ref("");
+const data = reactive({
+	name: "",
+	tel: "",
+	address: "",
+	photo: "",
+});
+
+onMounted(() => {});
+
+const modalControll = () => {
+	showModal.value = !showModal.value;
+};
+
+const createHandle = async () => {
+	try {
+		if (data.name === "" || data.tel === "") {
+			console.log("저장 불가!");
+			alert("이름과 전화번호를 입력하세요!");
+			modalControll();
+		} else {
+			const response = await axios.post(BASEURI, data);
+
+			if (response.status === 201) {
+				router.push("/contacts");
+			} else {
+				console.log("저장 실패!");
+			}
+		}
+	} catch (error) {
+		console.log("저장 실패! : ", error);
+	}
+};
+</script>
+
+<style scoped>
+#app {
+	position: relative;
+}
+.form {
+	margin-bottom: 20px;
+}
+
+#button_group {
+	display: flex;
+	justify-content: center;
+}
+
+.check_button {
+	margin-right: 10px;
+}
+#modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 500px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	box-shadow: 5px 5px gray;
+}
+
+#modal_burron_group {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	/* border: 1px solid red; */
+}
+</style>
+
+
+문제7] src/pages/ContactEditPage.vue 작성
+<template>
+	<div id="app">
+		<h1><i class="fa-solid fa-pen-to-square"></i> 연락처 수정</h1>
+		<div class="form">
+			<label for="name">name:</label>
+			<input
+				id="name"
+				type="text"
+				class="form-control"
+				placeholder="이름을 입력하세요"
+				v-model="data.name"
+				required
+			/>
+		</div>
+		<div class="form">
+			<label for="tel">tel:</label>
+			<input
+				id="tel"
+				type="text"
+				class="form-control"
+				placeholder="전화번호를 입력하세요"
+				v-model="data.tel"
+				required
+			/>
+		</div>
+		<div class="form">
+			<label for="address">address:</label>
+			<input
+				id="address"
+				type="text"
+				class="form-control"
+				placeholder="주소를 입력하세요"
+				v-model="data.address"
+			/>
+		</div>
+		<div class="form">
+			<label for="photo">photo url:</label>
+			<input
+				id="photo"
+				type="text"
+				class="form-control"
+				placeholder="사진의 url을 입력하세요"
+				v-model="data.photo"
+			/>
+		</div>
+		<div id="button_group">
+			<button class="btn btn-primary check_button" @click="modalControll">
+				<i class="fa-solid fa-check"></i>확인
+			</button>
+			<button class="btn btn-primary" @click="router.push(`/contacts`)">
+				<i class="fa-solid fa-rotate-left"></i>취소
+			</button>
+		</div>
+		<div id="modal" v-show="showModal">
+			<h3 id="title">저장하시겠습니까?</h3>
+			<div id="modal_burron_group">
+				<button class="btn btn-danger" @click="updateHandle">저장</button>
+				<button class="btn btn-primary" @click="modalControll">취소</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script setup>
+import { ref, reactive, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import axios from "axios";
+
+const BASEURI = "/api/contacts/";
+const router = useRouter();
+const route = useRoute();
+
+let showModal = ref(false);
+const id = ref("");
+const data = reactive({
+	name: "",
+	tel: "",
+	address: "",
+	photo: "",
+});
+
+onMounted(() => {
+	fetchData();
+});
+
+const fetchData = async () => {
+	try {
+		const response = await axios.get(BASEURI + route.params.id);
+
+		if (response.status === 200) {
+			data.name = response.data.name;
+			data.tel = response.data.tel;
+			data.address = response.data.address;
+			data.photo = response.data.photo;
+		} else {
+			console.log("detailData 조회 실패!");
+		}
+	} catch (error) {
+		console.log("detailData 조회 실패! : ", error);
+	}
+};
+
+const modalControll = () => {
+	showModal.value = !showModal.value;
+};
+
+const updateHandle = async () => {
+	try {
+		console.log("data /; ", data);
+		if (data.name === "" || data.tel === "") {
+			alert("이름과 전화번호를 입력하세요!");
+			modalControll();
+		} else {
+			const response = await axios.put(BASEURI + route.params.id, data);
+
+			if (response.status === 200) {
+				router.push("/contacts");
+			} else {
+				console.log("저장 실패!");
+			}
+		}
+	} catch (error) {
+		console.log("저장 실패! : ", error);
+	}
+};
+</script>
+
+<style scoped>
+#app {
+	position: relative;
+}
+.form {
+	margin-bottom: 20px;
+}
+
+#button_group {
+	display: flex;
+	justify-content: center;
+}
+
+.check_button {
+	margin-right: 10px;
+}
+#modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 500px;
+	height: 150px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	box-shadow: 5px 5px gray;
+}
+
+#modal_burron_group {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	/* border: 1px solid red; */
+}
+</style>
+
+
+
+
+
