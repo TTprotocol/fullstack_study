@@ -34,5 +34,17 @@ public class PlayerSettings {
                 System.out.println("볼륨이 " + level + "로 설정되었습니다.");
             }
         }
+
+        public static boolean isShuffle() {
+            return instance.shuffle;
+        }
+
+        public static boolean isRepeat() {
+            return instance.repeat;
+        }
+
+        public static int getVolumeLevel() {
+            return instance.volumeLevel;
+        }
     }
 }

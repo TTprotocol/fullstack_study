@@ -7,11 +7,11 @@ public class PlayerUI {
 
     private ClickListener listener;
 
-    void setClickListener(ClickListener listener) {
+    public void setClickListener(ClickListener listener) {
         this.listener = listener;
     }
 
-    void clickPlayButton() {
+    public void clickPlayButton() {
         if (listener == null) {
             System.out.println("❌ 재생 전략이 설정되지 않았습니다.");
         } else {
