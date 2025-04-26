@@ -18,11 +18,6 @@ public class FemaleMatchGame extends MatchGame {
     }
 
     @Override
-    public Celebrity playGame() {
-        return null;
-    }
-
-    @Override
     public void printCandidates() {
         System.out.println("[여자 연예인 월드컵 참가자 명단]");
         super.printCandidates();

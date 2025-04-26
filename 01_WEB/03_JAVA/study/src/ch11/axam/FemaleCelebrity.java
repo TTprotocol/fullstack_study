@@ -32,6 +32,7 @@ public class FemaleCelebrity implements Celebrity{
 
     @Override
     public String toString() {
-        return "여자 연예인: " + name;
+//        return "여자 연예인: " + name;
+        return name;
     }
 }

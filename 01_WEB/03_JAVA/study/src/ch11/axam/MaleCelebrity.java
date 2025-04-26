@@ -32,6 +32,7 @@ public class MaleCelebrity implements Celebrity{
 
     @Override
     public String toString() {
-        return "남자 연예인: " + name;
+//        return "남자 연예인: " + name;
+        return name;
     }
 }

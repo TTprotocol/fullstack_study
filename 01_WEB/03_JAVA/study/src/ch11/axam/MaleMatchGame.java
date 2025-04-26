@@ -22,9 +22,4 @@ public class MaleMatchGame extends MatchGame {
         System.out.println("[남자 연예인 월드컵 참가자 명단]");
         super.printCandidates();
     }
-
-    @Override
-    public Celebrity playGame() {
-        return null;
-    }
 }
