@@ -13,4 +13,5 @@ public class ExitCommand implements Command {
             System.exit(0);
         }
     }
+    // => Main의 static 메서드로 이동
 }
