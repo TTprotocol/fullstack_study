@@ -14,14 +14,14 @@ public class exam3 {
         // BFS(1)
             // 시작점 예약, 거리도 예약 (queue({1, 0}))
             // 방문 표시
-        while(!queue.isEmpty()) {
+//        while(!queue.isEmpty()) {
             // 방문
 
             // 최대 거리에 관한 로직 처리 추가
 
                 // (방문 안 한) 다음 노드 예약 (queue({next, 현재거리 + 1})
                 // 방문 표시
-        }
+//        }
 
 
         return answer;

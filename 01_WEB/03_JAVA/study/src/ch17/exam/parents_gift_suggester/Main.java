@@ -1,6 +1,6 @@
 package ch17.exam.parents_gift_suggester;
 
-import ch17.exam.parents_gift_suggester.step5.DadTop3Recommendation;
+import ch17.exam.parents_gift_suggester.step6.CategorySummaryReport;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,8 +14,9 @@ public class Main {
         // step4
 //        MomGiftAveragePrice.run();
         // step5
-        DadTop3Recommendation.run();
-
+//        DadTop3Recommendation.run();
+        // step6
+        CategorySummaryReport.run();
 
     }
 }
