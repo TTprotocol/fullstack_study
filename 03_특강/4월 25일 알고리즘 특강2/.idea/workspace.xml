@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91817ba7-18ee-45bc-9c6b-0c5d969561f8" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/maildata.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder1/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder1/Director.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder1/HTMLBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder1/TextBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder2/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/builder/builder3/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/facade/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/facade/pagemaker/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/facade/pagemaker/HtmlWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01_WEB/03_JAVA/designPattern/src/facade/pagemaker/PageMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/08_특강.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/images/orion-2942261.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/index9..html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style4_grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/3월 31일 UI&amp;UX 특강/style6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/4월 18일 알고리즘 특강1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/4월 18일 알고리즘 특강1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/out/production/4월 18일 알고리즘 특강1/leet/leet_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/out/production/4월 18일 알고리즘 특강1/programmers/stack_queue/Correct_Parentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/src/leet/leet_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/java/src/programmers/stack_queue/Correct_Parentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/out/production/java/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 18일 알고리즘 특강1/out/production/java/test/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/BFS/BFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/CoinChange/CoinChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/DFS/DFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/Exam/exam1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/Exam/exam2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/Exam/exam3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/4월 25일 알고리즘 특강2/java/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/5월 09일 알고리즘 특강3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/src/leet10191/solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/src/leet200/solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/src/prog178139/solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/java/src/prog178140/solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/out/production/5월 09일 알고리즘 특강3/leet10191/solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/out/production/5월 09일 알고리즘 특강3/leet200/solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/out/production/5월 09일 알고리즘 특강3/prog178139/solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/5월 09일 알고리즘 특강3/out/production/5월 09일 알고리즘 특강3/prog178140/solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/assets/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/TheWelcome.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/WelcomeItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/icons/IconCommunity.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/icons/IconDocumentation.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/icons/IconEcosystem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/icons/IconSupport.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/components/icons/IconTooling.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/views/AboutView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/src/views/HomeView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index11/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/src/assets/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index12/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/CommonFooter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/CommonHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/MainGallery.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/UI/BaseAlert.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/UI/BaseBadge.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/components/UI/BaseButton.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../02_특강/index13/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/09_과제제출.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/1. json-server - todos 엔드포인트 확인.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/10 Axios(기본).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/2. Thunder client 설치.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/3. CRUD 확인1 - Read 확인.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/4. CRUD 확인2 - Create 확인.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/5. CRUD 확인3 - Update 확인.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/6. CRUD 확인4 - Delete 확인.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/assets/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/1주차 과제/axios-test-app/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/03 클래스(기본).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec06/exam01/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec06/exam01/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam01/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam01/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam02/Korean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam02/KoreanExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam03/Korean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam04/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam04/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam05/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec07/exam05/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam01/CalculatorExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam01/Carculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam02/Computer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam02/ComputerExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam03/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam03/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam04/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec08/exam04/CalculatorExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec09/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec09/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec10/exam01/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec10/exam01/CalculatorExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec11/exam02/EarchExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec11/exam02/Earth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec14/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/2주차 과제/ch06/sec14/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/07 예외처리, 라이브러리(기본).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/Celebrity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/CelebrityRegister.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/FemaleCelebrity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/InvalidNameException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/MaleCelebrity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/axam/NameValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec02/axam01/ExceptionHandlingExample1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec02/axam01/ExceptionHandlingExample2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec02/axam02/ExceptionHandlingExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec03/exam01/ExceptionHandlingExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec03/exam02/ExceptionHandlingExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec03/exam03/ExceptionHandlingExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec04/MyResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec04/TryWithResourceExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec05/ThrowsExample1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec05/ThrowsExample2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec06/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec06/AccountExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch11/sec06/InsufficientException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam01/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam02/HashCodeExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam02/HashSetExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam02/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam04/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam04/RecordExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec03/exam05/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec04/ErrExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec04/GetPropertyExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec04/MeasureRunTimeExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec05/StringBuilderExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec05/StringTokenizerExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec08/CalendarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/3주차 과제/16회차_박준영(A)_3주차_과제/ch12/sec08/DateExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/10 컬렉션(기본).pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/doll/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/doll/history/DollHistoryManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/doll/queue/DollQueueManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/doll/queue/DollStackManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/doll/util/RandomCustomerProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/quiz/Content.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/quiz/Quiz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/quiz/QuizBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/exam/quiz/QuizMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec02/exam01/ArrayListExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec02/exam01/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec02/exam03/LinkedListExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec03/exam01/HashSetExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec03/exam02/HashSetExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec03/exam02/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec03/exam03/HashSetExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec04/exam01/HashMapExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec04/exam03/PropertiesExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam01/TreeSetExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam02/TreeMapExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam03/ComparableExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam03/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam04/ComparatorExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam04/ComparatorExample2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam04/Fruit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec05/exam04/FruitComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam01/Coin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam01/StackExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam02/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam02/QueueExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/QueueExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/command/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/command/SendKakaotalkCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/command/SendMailCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/4주차 과제/16회차_박준영(A)_4주차_과제/ch15/sec06/exam03/command/SendSmsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/contacts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/assets/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/pages/ContactDetailPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/pages/ContactEditPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/pages/ContactListPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/pages/ContactWritePage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/contacts-app/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/모듈평가1/2025 모듈평가_프론트엔드_문항.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../03_과제제출/모듈평가1/답안작성_16회차_박준영.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TTprotocol"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TTprotocol/fullstack_study.git",
+    "accountId": "68baa446-130e-4b96-8b15-0fade5c2a106"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2wCabuFVcf34ntnEnE6VXQgKzIu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="91817ba7-18ee-45bc-9c6b-0c5d969561f8" name="변경" comment="" />
+      <created>1745548088613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745548088613</updated>
+      <workItem from="1745548089528" duration="61000" />
+      <workItem from="1745548163710" duration="40000" />
+      <workItem from="1747376718056" duration="2644000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
