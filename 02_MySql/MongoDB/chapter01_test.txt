@@ -1,0 +1,108 @@
+// 실습
+// 1
+use movie_booking;
+
+db.theaters.insert({
+    name: "CGV 강남",
+    location: "서울 강남구"
+});
+db.theaters.find().pretty();
+
+// 2
+db.movies.insert({
+    title: "파묘", 
+    genre: "공포", 
+    runtime: 114
+});
+db.movies.insert({
+    title: "범죄도시4", 
+    genre: "액션", 
+    runtime: 109
+});
+db.movies.find().pretty();
+
+// 3
+db.users.insert({
+    name: "김지우",
+    email: "jiwoo.kim@example.com"
+});
+db.users.insert({
+    name: "이슬이",
+    email: "seuli.lee@example.com"
+});
+db.users.find().pretty();
+
+// 4
+const movie = db.movies.findOne({ title: "파묘" }, { _id: 1 });
+const theater = db.theaters.findOne({ name: "CGV 강남" }, { _id: 1 });
+
+db.showtimes.insertOne({
+  movie_id: movie._id,
+  theater_id: theater._id,
+  date: ISODate("2025-06-01T13:00:00Z"),
+  available_seats: ["A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"]
+});
+
+// 5
+db.showtimes.find().pretty();
+
+// 6
+const theater = db.theaters.findOne({ name: "CGV 강남" }, { _id: 1 });
+db.showtimes.findOne({theater_id: theater._id});
+
+// 7
+const user = db.users.findOne({name: "김지우"}, {_id: 1});
+const movie = db.movies.findOne({ title: "파묘" }, { _id: 1 });
+const showTime = db.showtimes.findOne({movie_id: movie._id}, {_id: 1});
+
+db.reservations.insert({
+    user_id: user._id, 
+    showtime_id: showTime._id, 
+    seats: ["A1", "A2"]
+})
+db.reservations.find().pretty();
+
+
+// 8
+const movie = db.movies.findOne({title: "파묘"}, {_id: 1});
+const showTime = db.showtimes.findOne({movie_id: movie._id, date: ISODate("2025-06-01T13:00:00Z")}, {_id: 1});
+
+db.reservations.findOne({
+    showtime_id: showTime._id
+}, {
+    _id:0, seats: 1
+});
+
+// 9
+db.showtimes.find();
+db.showtimes.update(
+    {_id : ObjectId("683416e15f972cf05d44153a")},
+    {$pull : {available_seats: {$in: ["A1", "A2"]}}}
+);
+db.showtimes.find({}, {_id: 0, available_seats: 1});
+
+// 10
+db.showtimes.find();
+db.showtimes.update(
+    {_id : ObjectId("683416e15f972cf05d44153a")},
+    {$push : {available_seats: {$each: ["A1", "A2"]}}}
+);
+db.showtimes.find({}, {_id: 0, available_seats: 1});
+
+// 11
+const user = db.users.findOne({name: "김지우"}, {_id: 1});
+
+db.movies.update({title:"파묘"}, {$set:{rating: {user_id : user._id, score: 5} }});
+db.movies.find();
+
+// 12
+db.movies.update({title:"파묘"}, {$set:{"rating.score": 4}});
+db.movies.find();
+
+// 13
+
+
+
+
+
+

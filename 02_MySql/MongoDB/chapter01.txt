@@ -1,0 +1,116 @@
+// 기본
+// 1
+use tutorial;
+// insert 문
+db.users.insert({username : "smith"});
+db.users.insert({username : "jones"});
+db.users.find();
+db.users.findOne();
+db.users.count();
+
+// 2
+db.users.find({username:"jones"});
+db.users.find({username:"smith"});
+db.users.find({_id:ObjectId("6833c5afc50c54bb1544152e"), username:"smith"});
+
+// 3
+// update 문
+db.users.update({username:"smith"}, {$set:{country:"Canada"}});
+db.users.find({username: "smith"});
+
+// 4
+db.users.update({username:"smith"}, {$set:{country:"Canada"}});
+
+db.users.find({username: "smith"}).pretty();
+
+// 5
+
+// 6
+show dbs;
+show collections;
+//db.users.status();
+
+
+// 7
+db.users.remove({username: "smith"});
+db.users.find();
+db.users.remove({});
+db.users.find();
+db.users.drop();
+
+
+// 기본2
+// 1
+use test;
+for(let i = 0; i < 20000; i++) {
+    db.product.insert({num: i});
+}
+db.product.count();
+
+// 2
+db.product.find().sort({ num: -1 });
+db.product.find().sort({ num: -1 }).limit(10);
+db.product.find().sort({ num: -1 }).skip(50).limit(10);
+
+// 3
+db.product.find({
+  $or: [
+    { num: { $lt: 15 } },
+    { num: { $gt: 19995 } }
+  ]
+});
+db.product.find({
+  num: { $in: [10, 100, 1000] }
+});
+
+// 4
+db.product.find(
+  { num: { $lt: 5 } },       // 조건: num < 5
+  { _id: 0, name: 1 }        // 출력 필드: name만 출력, _id는 숨김
+);
+
+
+// 심화
+// 1
+use users;
+db.users.insert({username:"smith"});
+db.users.update({username:"smith"}, 
+{
+    $set:{
+        favorites: {
+            cities: ["Chiago", "Cheyenne"],
+            movies:["Casablanca", "For a Fuw Dollars More", "The Sting"]
+        }
+    }
+});
+db.users.find();
+
+// 2
+db.users.find({"favorites.movies": "Casablanca"});
+db.users.update( {"favorites.movies": "Casablanca"},
+    {
+        $set: {
+            favorites: { movies: ["The Maltese Falcon"]}
+        }
+    }
+);
+db.users.find();
+
+// 심화2
+// 1
+use numbers;
+for(let i = 0; i < 20000; i++) {
+    db.numbers.insert({num: i});
+}
+db.numbers.count();
+
+// 2
+db.numbers.find( {num: {"$gt": 20, "$lt": 25 }} );
+db.numbers.find({num: {"$gt": 199995}}).explain("executionStats");
+
+// 3
+db.numbers.ensureIndex({num: 1});
+db.numbers.getIndexes();
+
+
+

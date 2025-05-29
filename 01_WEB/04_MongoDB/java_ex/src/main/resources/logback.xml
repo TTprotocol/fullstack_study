@@ -1,0 +1,23 @@
+<configuration>
+    <!-- 콘솔에 로그를 출력하는 appender를 정의합니다. -->
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %-4relative [%thread] %-5level %logger{30} - %msg%n
+                <!-- 863  [main] INFO  org.mongodb.driver.client - MongoClient with metadata
+                {"driver": {"name": "mongo-java-driver|sync", "version": "5.0.0"}, ... -->
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- MongoDB 드라이버의 로그 레벨을 INFO로 설정합니다. -->
+    <!-- 로그 레벨 : TRACE -> DEBUG -> INFO -> WARN -> ERROR -->
+    <!-- INFO 설정 시, 이상의 레벨만 출력함. (INFO, WARN, ERROR) -->
+    <logger name="org.mongodb.driver.connection" level="INFO" additivity="true"/>
+
+    <!-- 루트 로거의 로그 레벨을 INFO로 설정하고, CONSOLE appender를 사용합니다. -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
