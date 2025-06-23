@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--Mapper 인터페이스와 정확히 일치하는 경로 지정-->
-<mapper namespace="">
-    
+<mapper namespace="com.yuco.stock.mapper.StockMapper">
+    <select id="getList" resultType="StockVO">
+        <![CDATA[
+        SELECT * FROM tbl_stock ORDER BY reg_date DESC
+        ]]>
+    </select>
 </mapper>

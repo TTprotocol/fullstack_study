@@ -1,0 +1,28 @@
+package org.scoula.sample.service;
+
+import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.scoula.config.RootConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {RootConfig.class})
+@Log4j2
+class SampleServiceTest {
+    @Autowired
+    private SampleService service;
+
+    @Test
+    public void doAdd() throws Exception{
+        log.info(service.doAdd("123", "456"));  // 실제 서비스 호출 + 결과값 출력
+    }
+
+    @Test
+    public void addError() throws Exception{
+        log.info(service.doAdd("123", "ABC"));  // ABC는 정수로 변환할 수 없으므로 NumberFormatException 발생
+    }
+
+}

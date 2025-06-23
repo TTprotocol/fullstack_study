@@ -76,6 +76,24 @@ public class BoardServiceImpl implements BoardService {
         return mapper.delete(no) == 1;
     }
 
+    @Transactional
+    public BoardDTO deleteBoardDTO(Long no) {
+        log.info("delete...." + no);
+        BoardDTO board = get(no);
+
+        // 해당 게시글의 첨부파일 목록 가져오기
+        List<BoardAttachmentVO> attachList = mapper.getAttachmentList(no);
+
+        // 첨부파일 목록 돌면서 첨부파일들 삭제
+        for (BoardAttachmentVO attach : attachList) {
+            mapper.deleteAttachment(attach.getNo());
+        }
+
+        // 게시글 삭제
+        mapper.delete(no);
+        return board;
+    }
+
     private void upload(Long bno, List<MultipartFile> files) {
         for (MultipartFile part : files) {
             if (part.isEmpty()) continue;   // 파일이 비어있으면 다음 파일 가져오기

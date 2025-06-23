@@ -38,8 +38,11 @@ public class UploadFiles {
         return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
     }
 
+    // 파일 다운로드를 처리하는 메서드
     public static void download(HttpServletResponse response, File file, String orgName) throws Exception {
+        // 응답의 ContentType을 다운로드 파일로 설정
         response.setContentType("application/download");
+        // 파일의 크기를 응답에 추가
         response.setContentLength((int) file.length());
 
         String filename = URLEncoder.encode(orgName, "UTF-8"); // 한글 파일명인 경우 인코딩 필수
