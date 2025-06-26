@@ -24,6 +24,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    // userDetailsService를 주입받음
+    // DB 기반 인증 처리를 위한 서비스 (in-memory 방식과 병행 불가)
     private final UserDetailsService userDetailsService;
 
     // 문자셋 필터 정의
@@ -80,11 +82,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //            .password("$2a$10$VJK.3K/W3PhSu53.FVm7WOEzFZPlGTw5.iiCZXgKTHPkhK419Jdz2") // 암호화
 //            .roles("MEMBER"); // ROLE_MEMBER  // 회원 권한만 부여
 
+        // DB에서 사용자 정보를 조회하고, 해시된 비밀번호로 인증
         auth
             .userDetailsService(userDetailsService)
             .passwordEncoder(passwordEncoder());
     }
 
+    // 보안 강화를 위한 BCrypt 해시 알고리즘 사용
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
