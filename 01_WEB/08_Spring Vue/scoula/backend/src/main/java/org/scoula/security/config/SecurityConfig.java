@@ -75,25 +75,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // 로그인 인증 필터 (ID/PW 로그인 처리)
             .addFilterBefore(jwtUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-//        // 경로별 접근 권한 설정
-//        http.authorizeRequests()
-//            .antMatchers("/security/all").permitAll()   // 모든 사용자 접근 허용
-//            .antMatchers("/security/admin").access("hasRole('ROLE_ADMIN')") // ADMIN 권한 보유자만 허용
-//            .antMatchers("/security/member").access("hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"); // MEMBER, ADMIN 권한 보유자만 허용
-//
-//        http.formLogin()    // form 기반 로그인 설정 시작
-//            .loginPage("/security/login")   // 커스텀 로그인 페이지의 경로 설정 (GET 요청)
-//            .loginProcessingUrl("/security/login")  // 로그인 처리를 위한 경로 설정 (POST 요청)
-//            .defaultSuccessUrl("/");    // 성공시 리다이렉트될 기본 URL 설정
-//
-//        http.logout()   // 로그아웃 설정 시작
-//            .logoutUrl("/security/logout")  // post 로그아웃 호출 URL
-//            .invalidateHttpSession(true)    // 세션 invalidate
-//            .deleteCookies("remember-me", "JSESSION-ID")    // 삭제할 쿠키 목록
-//            .logoutSuccessUrl("/security/logout");  // get. 로그아웃 이후에 이동할 URL
-//
-//        http.formLogin(); // form 기반 로그인 활성화, 나머지는 모두 디폴트
-
         http
             .exceptionHandling()
             .authenticationEntryPoint(authenticationEntryPoint)
@@ -106,15 +87,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
 
-//        http.authorizeRequests() // 경로별 접근 권한 설정
-//            .antMatchers(HttpMethod.OPTIONS).permitAll()
-//            .antMatchers("/api/security/all").permitAll() // 모두 허용
-//            .antMatchers("/api/security/member")
-//            .access("hasRole('ROLE_MEMBER')") // ROLE_MEMBER 이상 접근 허용
-//            .antMatchers("/api/security/admin")
-//            .access("hasRole('ROLE_ADMIN')") // ROLE_ADMIN 이상 접근 허용
-//            .anyRequest().authenticated(); // 나머지는 로그인 된 경우 모두 허용
-
         http
             .authorizeRequests()
             .antMatchers(HttpMethod.OPTIONS).permitAll()
@@ -126,21 +98,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth)
         throws Exception {
         log.info("configure .........................................");
-
-        // 관리자 계정 설정
-//        auth.inMemoryAuthentication()
-//            .withUser("admin")
-////            .password("{noop}1234") // 평문 비밀번호 (비권장)
-//            .password("$2a$10$VJK.3K/W3PhSu53.FVm7WOEzFZPlGTw5.iiCZXgKTHPkhK419Jdz2") // 암호화
-//            .roles("ADMIN", "MEMBER"); // ROLE_ADMIN  // 관리자이자 회원 ("ADMIN", "MEMBER")
-
-        // 일반 사용자 계정 설정
-//        auth.inMemoryAuthentication()
-//            .withUser("member")
-////            .password("{noop}1234") // 평문 비밀번호
-//            .password("$2a$10$VJK.3K/W3PhSu53.FVm7WOEzFZPlGTw5.iiCZXgKTHPkhK419Jdz2") // 암호화
-//            .roles("MEMBER"); // ROLE_MEMBER  // 회원 권한만 부여
-
         // DB에서 사용자 정보를 조회하고, 해시된 비밀번호로 인증
         auth
             .userDetailsService(userDetailsService)
@@ -177,9 +134,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // 접근 제한 무시 경로 설정 – resource
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**",
+        web.ignoring().antMatchers(
+            "/assets/**",
+            "/*",
+            "/api/member/**",
             // Swagger 관련 url은 보안에서 제외
-            "/swagger-ui.html", "/webjars/**", "swagger-resources/**", "/v2/api-docs"
+            "/swagger-ui.html",
+            "/webjars/**",
+            "swagger-resources/**",
+            "/v2/api-docs"
         );
     }
 }

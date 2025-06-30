@@ -19,6 +19,7 @@ public class BoardController {
     @GetMapping("")
     public ResponseEntity<List<BoardDTO>> getList() {
 //        return service.getList();
+        log.info("test------------------");
         return ResponseEntity.ok(service.getList());
     }
 

@@ -24,9 +24,9 @@ import javax.sql.DataSource;
 @Log4j2
 @Configuration
 @PropertySource({"classpath:/application.properties"})  // 설정 파일 위치 설정
-@MapperScan(basePackages = {"org.scoula.board.mapper"})
-@ComponentScan(basePackages = {"org.scoula.board.service"})
-@EnableTransactionManagement
+@MapperScan(basePackages = {"org.scoula.board.mapper", "org.scoula.member.mapper"})
+@ComponentScan(basePackages = {"org.scoula.board.service", "org.scoula.member.service"})
+@EnableTransactionManagement    // 트랜잭션 어노테이션 활성화
 public class RootConfig {
     // DB 설정
     // application.properties에서 값 주입

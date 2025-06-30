@@ -12,7 +12,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {
     "org.scoula.controller",
     "org.scoula.exception",  // 예외처리 advice 등록
-    "org.scoula.board.controller"
+    "org.scoula.board.controller",
+    "org.scoula.member.controller",
 })
 public class ServletConfig implements WebMvcConfigurer {
     @Override
@@ -28,7 +29,7 @@ public class ServletConfig implements WebMvcConfigurer {
             .addResourceLocations("/resources/"); // webapp/resources/경로로 매핑
 
         registry.addResourceHandler("/assets/**")
-            .addResourceLocations("/resources/assets");
+            .addResourceLocations("/resources/assets/");
 
         // Swagger UI 리소스를 위한 핸들러 설정
         registry.addResourceHandler("/swagger-ui.html")
