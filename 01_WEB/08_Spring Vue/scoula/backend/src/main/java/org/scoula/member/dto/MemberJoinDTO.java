@@ -15,8 +15,9 @@ public class MemberJoinDTO {
     private String username;
     private String password;
     private String email;
-    private MultipartFile avatar;
+    private MultipartFile avatar;   // 프로필 이미지 (파일 업로드용)
 
+    // DTO를 VO로 변환하는 메서드
     public MemberVO toVO() {
         return MemberVO.builder()
             .username(username)

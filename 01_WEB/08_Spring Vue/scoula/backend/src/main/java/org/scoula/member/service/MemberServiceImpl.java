@@ -24,12 +24,14 @@ public class MemberServiceImpl implements MemberService {
     final PasswordEncoder passwordEncoder;
     final MemberMapper mapper;
 
+    // 중복 검사
     @Override
     public boolean checkDuplicate(String username) {
         MemberVO member = mapper.findByUsername(username);
         return member != null ? true : false;
     }
 
+    // 회원 + 권한 정보 조회
     @Override
     public MemberDTO get(String username) {
         MemberVO member = Optional.ofNullable(mapper.get(username))
@@ -37,6 +39,29 @@ public class MemberServiceImpl implements MemberService {
         return MemberDTO.of(member);
     }
 
+    // 회원 가입 처리
+    @Transactional  // 트랜잭션 처리
+    @Override
+    public MemberDTO join(MemberJoinDTO dto) {
+        MemberVO member = dto.toVO();
+
+        member.setPassword(passwordEncoder.encode(member.getPassword())); // 비밀번호 암호화
+        mapper.insert(member);  // 회원 정보 삽입
+
+        // 권한 등록
+        AuthVO auth = new AuthVO();
+        auth.setUsername(member.getUsername());
+        auth.setAuth("ROLE_MEMBER");    // 기본 권한 삽입
+        mapper.insertAuth(auth);
+
+        // 아바타 저장
+        saveAvatar(dto.getAvatar(), member.getUsername());
+
+        // 저장 후 조회하여 DTO 반환
+        return get(member.getUsername());
+    }
+
+    // 아바타 파일 저장
     private void saveAvatar(MultipartFile avatar, String username) {
         //아바타 업로드
         if (avatar != null && !avatar.isEmpty()) {
@@ -47,18 +72,5 @@ public class MemberServiceImpl implements MemberService {
                 throw new RuntimeException(e);
             }
         }
-    }
-
-    @Transactional
-    @Override
-    public MemberDTO join(MemberJoinDTO dto) {
-        MemberVO member = dto.toVO();
-        member.setPassword(passwordEncoder.encode(member.getPassword())); // 비밀번호 암호화 mapper.insert(member);
-        AuthVO auth = new AuthVO();
-        auth.setUsername(member.getUsername());
-        auth.setAuth("ROLE_MEMBER");
-        mapper.insertAuth(auth);
-        saveAvatar(dto.getAvatar(), member.getUsername());
-        return get(member.getUsername());
     }
 }

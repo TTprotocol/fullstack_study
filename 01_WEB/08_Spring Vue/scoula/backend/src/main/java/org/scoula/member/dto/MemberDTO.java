@@ -19,9 +19,10 @@ public class MemberDTO {
     private String email;
     private Date regDate;
     private Date updateDate;
-    private MultipartFile avatar;
+    private MultipartFile avatar;   // 피로필 이미지
     private List<String> authList; // 권한 목록, join 처리 필요
 
+    // VO -> DTO 변환 (정적 메서드)
     public static MemberDTO of(MemberVO m) {
         return MemberDTO.builder()
             .username(m.getUsername())

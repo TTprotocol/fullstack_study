@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder    // 이 어노테이션이 있어야 DTO <-> VO를 할 수 있다.
 public class MemberVO {
     private String username;
     private String password;
