@@ -12,6 +12,7 @@ instance.interceptors.request.use(
 		// JWT 추출
 		const { getToken } = useAuthStore();
 		const token = getToken();
+
 		if (token) {
 			// 토큰이 있는 경우 Authorization 헤더 설정
 			config.headers["Authorization"] = `Bearer ${token}`;
@@ -20,6 +21,7 @@ instance.interceptors.request.use(
 		return config;
 	},
 	(error) => {
+		console.log("요청 중 에러 발생");
 		// 요청 중 에러 발생시
 		return Promise.reject(error);
 	}
@@ -38,6 +40,7 @@ instance.interceptors.response.use(
 		return response;
 	},
 	async (error) => {
+		console.log("응답 중 에러 발생");
 		if (error.response?.status === 401) {
 			const { logout } = useAuthStore();
 			logout();

@@ -90,6 +90,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
             .antMatchers(HttpMethod.OPTIONS).permitAll()
+            // 1. post로 오는 /api/member는 회원가입 url이다.
+            // .antMatchers(HttpMethod.POST,"/api/member").authenticated()
+            // 회원정보 수정/패스워드 수정 url => 반드시 인증 필요
+            .antMatchers(HttpMethod.PUT,"/api/member", "/api/member/*/changepassword").authenticated()
             // 일단 모든 접근 허용
             .anyRequest().permitAll();
     }
@@ -137,7 +141,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(
             "/assets/**",
             "/*",
-            "/api/member/**",
+            // "/api/member/**", // => /api/member 이하의 모든 url을 허용했다. => 수정 필요
             // Swagger 관련 url은 보안에서 제외
             "/swagger-ui.html",
             "/webjars/**",

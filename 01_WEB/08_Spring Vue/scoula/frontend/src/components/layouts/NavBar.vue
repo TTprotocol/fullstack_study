@@ -27,8 +27,8 @@ const toggleNavShow = () => (state.isNavShow = !state.isNavShow);
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div :class="navClass" id="collapsibleNavbar">
-				<!-- 추후 작업 예정 -->
-				<MenuGroup :menus="config.menus" /> <AccountMenuGroup />
+				<MenuGroup :menus="config.menus" />
+				<AccountMenuGroup />
 			</div>
 		</div>
 	</nav>

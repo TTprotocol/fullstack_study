@@ -52,10 +52,13 @@ public class UploadFiles {
 
     public static void downloadImage(HttpServletResponse response, File file) {
         try {
+            // 파일 경로를 Path 객체로 변환
             Path path = Path.of(file.getPath());
+            // MIME 타입 추출 (image/png, image/jpeg 등)
             String mimeType = Files.probeContentType(path);
-            response.setContentType(mimeType);
-            response.setContentLength((int) file.length());
+            // 응답 헤더 설정
+            response.setContentType(mimeType);  // 콘텐츠 타입 설정
+            response.setContentLength((int) file.length()); // 콘텐츠 파일 사이즈 설정
 
             try (OutputStream os = response.getOutputStream();
                  BufferedOutputStream bos = new BufferedOutputStream(os)) {

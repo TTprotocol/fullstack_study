@@ -12,6 +12,7 @@ const initState = {
 };
 
 // 스토어 정의
+// 유저 정보를 가지고 있는 파일
 export const useAuthStore = defineStore("auth", () => {
 	const state = ref({ ...initState });
 	const isLogin = computed(() => !!state.value.user.username); // 로그인 여부. 강제로 boolean으로 형변환
@@ -55,8 +56,23 @@ export const useAuthStore = defineStore("auth", () => {
 		}
 	};
 
+	//
+	const changeProfile = (member) => {
+		state.value.user.email = member.email;
+		localStorage.setItem("auth", JSON.stringify(state.value));
+	};
+
 	load(); // 컴포넌트 마운트 시 호출
 
 	// 외부에서 사용할 값 반환
-	return { state, username, email, isLogin, login, logout, getToken };
+	return {
+		state,
+		username,
+		email,
+		isLogin,
+		changeProfile,
+		login,
+		logout,
+		getToken,
+	};
 });

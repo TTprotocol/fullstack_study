@@ -10,8 +10,8 @@ export default [
 		component: () => import("../pages/auth/JoinPage.vue"),
 	},
 	{
-		path: "/auth/porfile",
-		name: "porfile",
+		path: "/auth/profile",
+		name: "profile",
 		component: () => import("../pages/auth/ProfilePage.vue"),
 	},
 	{
