@@ -3,6 +3,7 @@ package org.scoula.board.mapper;
 import org.scoula.board.domain.BoardAttachmentVO;
 import org.scoula.board.domain.BoardVO;
 import org.scoula.board.dto.BoardDTO;
+import org.scoula.common.pagination.PageRequest;
 
 import java.util.List;
 
@@ -25,4 +26,8 @@ public interface BoardMapper {
     BoardAttachmentVO getAttachment(Long no);
 
     int deleteAttachment(Long no);
+
+    int getTotalCount();    // 전체 페이지 가져오기
+
+    List<BoardVO> getPage(PageRequest pageRequest); // 페이지네이션을 위한 페이지 가져오기
 }
