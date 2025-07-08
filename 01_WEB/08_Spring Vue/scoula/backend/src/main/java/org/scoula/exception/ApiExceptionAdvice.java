@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
-@Order(2)
+@Order(1)
 public class ApiExceptionAdvice {
     // 404 에러
     @ExceptionHandler(NoSuchElementException.class)

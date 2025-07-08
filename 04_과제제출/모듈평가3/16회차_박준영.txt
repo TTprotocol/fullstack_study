@@ -1,0 +1,118 @@
+-- -----------------------------------------
+-- 	spring mvc기본 문제
+-- -----------------------------------------
+-- 	문제 1번
+-- -----------------------------------------
+
+<!--
+        문제 1번: XML코드 구현 부분
+            조건1- 삽입하는 컬럼을 테이블이름 뒤에 명시해야 함.
+            조건2- no컬럼은 자동 증가하므로 명시하지 않음.
+            조건3- 필요한 경우 insert태그 내 속성을 추가
+                  (필요 없는 경우에는 추가할 필요 없음)
+        -->
+        insert into tbl_board(title, content, writer)
+        values ( #{title}, #{content}, #{writer} )
+
+-- -----------------------------------------
+-- 	문제 2번
+-- -----------------------------------------
+
+<!--
+        문제 2번: XML코드 구현 부분
+            조건1- no로 내림차순 정렬 처리해야 함.
+            조건2- 테이블의 모든 컬럼을 검색함.
+            조건3- 필요한 경우 select태그 내 속성을 추가
+                  (필요 없는 경우에는 추가할 필요 없음)
+        -->
+        <![CDATA[
+                select * from tbl_board
+                order by no desc
+        ]]>
+
+<!--
+    문제 2번: JSP코드 구현 부분
+    조건1- jstl을 이용하여 반복문 처리해야함.
+    조건2- 게시판 제목을 클릭했을 때 해당 번호에 맞는 상세페이지를 호출하도록 a태그로 링크 처리해야함.
+    -->
+    <c:forEach var="board" items="${list}">
+        <tr>
+            <td>${board.no}</td>
+            <td><a href="get?no=${board.no}">${board.title}</a></td>
+            <td>${board.content}</td>
+            <td>
+                <fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/>
+            </td>
+        </tr>
+    </c:forEach>
+
+-- -----------------------------------------
+-- 	문제 3번
+-- -----------------------------------------
+
+<!--
+        문제 3번: XML코드 구현 부분
+            조건1- no로 조건 검색 처리해야함.
+            조건2- no로 테이블의 모든 컬럼을 검색함.
+            조건3- 필요한 경우 select태그 내 속성을 추가
+                  (필요 없는 경우에는 추가할 필요 없음)
+        -->
+        select *
+        from tbl_board
+        where no = #{no}
+        order by no desc
+
+<!-- 문제 3 : 제목 출력 -->
+    ${board.title}
+
+<!-- 문제 3 : 작성자 출력 -->
+        ${board.writer}
+
+<!-- 문제 3 : 날짜 출력 -->
+        <fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/>
+
+<!-- 문제 3 : 내용 출력 -->
+    ${board.content}
+
+/*
+     * 문제 3번 : get요청을 처리할 수 있는 메서드 정의
+     *           webapp/WEB-INF/views/board/get.jsp에 모델 속성 정보를 출력해야함.
+     * */
+    @GetMapping("/get")
+    public void get(@RequestParam("no") Long no, Model model) {
+        model.addAttribute("board", service.get(no));
+    }
+
+
+-- -----------------------------------------
+-- 	spring rest 문제
+-- -----------------------------------------
+-- 	문제 4번
+-- -----------------------------------------
+
+/**
+     * 문제 4번 : 게시판 전체 목록을 검색해서
+     * json array로 전송할 수 있는
+     * 컨트롤러 메서드 코드 구현
+     */
+    @GetMapping("list")
+    public ResponseEntity<List<BoardVO>> getList() {
+        return ResponseEntity.ok(service.getList());
+    }
+
+-- -----------------------------------------
+-- 	문제 5번
+-- -----------------------------------------
+
+/**
+     * 문제 5번 : 주소에 포함된 no파라메터 값을 추출하여
+     * no의 값을 조건으로 db로 부터 검색해온
+     * 게시판 상세정보를 json로 전송할 수 있는
+     * 컨트롤러 메서드 코드 구현
+     */
+    @GetMapping("/{no}")
+    public ResponseEntity<BoardVO> get(@PathVariable Long no) {
+        return ResponseEntity.ok(service.get(no));
+    }
+
+

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice   // 모든 컨트롤러에서 발생하는 예외처리
 @Log4j2
-@Order(1)
+@Order(2)
 public class CommonExceptionAdvice {
     @ExceptionHandler(Exception.class)  // 모든 예외를 이 메서드에서 처리한다
     // 예외와 뷰에 출력하기 위한 Model을 받는다.

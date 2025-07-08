@@ -16,7 +16,7 @@ instance.interceptors.request.use(
 		if (token) {
 			// 토큰이 있는 경우 Authorization 헤더 설정
 			config.headers["Authorization"] = `Bearer ${token}`;
-			console.log(config.headers.Authorization);
+			// console.log(config.headers.Authorization);
 		}
 		return config;
 	},

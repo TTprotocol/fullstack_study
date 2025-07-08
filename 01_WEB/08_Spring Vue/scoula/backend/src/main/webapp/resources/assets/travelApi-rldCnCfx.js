@@ -1,0 +1,1 @@
+import{i as o}from"./index-DVywmbLP.js";const s="/api/travel",n={async getList(a){console.log("start travel getList");const{data:t}=await o.get(s,{params:a});return console.log("TRAVEL GET LIST: ",t),t},async get(a){const{data:t}=await o.get(`${s}/${a}`);return console.log("TRAVEL GET",t),t}};export{n as a};
